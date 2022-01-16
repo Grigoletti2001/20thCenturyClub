@@ -1505,5 +1505,15 @@ input[type="text"] {
   font-family: verdana;
   vertical-align: center;
 }
-
 /*# sourceMappingURL=style.css.map */
+
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
