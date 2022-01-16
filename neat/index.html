@@ -185,7 +185,7 @@
                 <div class="row animate-box">
                     <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
                      
-                     
+
                     </div>
                 </div>
                 <div class="row">
@@ -224,10 +224,14 @@
                 </div>
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2">
-                        <div class="Hits">
+                       
 
 
-                            <img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+                        <body onload="incrementCount(10)">
+                        <div class="main_container" id="id_main_container">
+                        <div class="container_inner" id="display_div_id">
+                        </div>
+                         </div>
 
 
                         </div>
@@ -236,71 +240,24 @@
             </div>
 
             <div id="fh5co-blog" class="blog-flex">
-                <div class="featured-blog" style="background-image: url(images/blog-1.jpg);">
-                    <div class="desc-t">
-                        <div class="desc-tc">
-                            <span class="featured-head">Featured Posts</span>
-                            <h3><a href="#">Top 20 Best WordPress Themes 2017 Multi Purpose and Creative Websites</a></h3>
-                            <span><a href="#" class="read-button">Learn More</a></span>
-                        </div>
-                    </div>
+                
                 </div>
                 <div class="blog-entry fh5co-light-grey">
                     <div class="row animate-box">
-                        <div class="col-md-12">
-                            <h2>Latest Posts</h2>
+                        
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 animate-box">
-                            <a href="#" class="blog-post">
-                                <span class="img" style="background-image: url(images/blog-2.jpg);"></span>
-                                <div class="desc">
-                                    <h3>26 Best Education WordPress Themes 2017 You Need To See</h3>
-                                    <span class="cat">Collection</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 animate-box">
-                            <a href="#" class="blog-post">
-                                <span class="img" style="background-image: url(images/blog-1.jpg);"></span>
-                                <div class="desc">
-                                    <h3>16 Outstanding Photography WordPress Themes You Must See</h3>
-                                    <span class="cat">Collection</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 animate-box">
-                            <a href="#" class="blog-post">
-                                <span class="img" style="background-image: url(images/blog-3.jpg);"></span>
-                                <div class="desc">
-                                    <h3>16 Outstanding Photography WordPress Themes You Must See</h3>
-                                    <span class="cat">Collection</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END container-wrap -->
+                    
 
         <div class="container-wrap">
             <footer id="fh5co-footer" role="contentinfo">
                 <div class="row">
                     <div class="col-md-3 fh5co-widget">
-                        <h4>About Neat</h4>
+                        <h4>About 20th Century Club of Park Ridge</h4>
                         <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
                     </div>
                     <div class="col-md-3 col-md-push-1">
-                        <h4>Latest Posts</h4>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Article 1</a></li>
-                            <li><a href="#">Article 2</a></li>
-                            <li><a href="#">Article 3</a></li>
-                            <li><a href="#">Article 4</a></li>
-                            <li><a href="#">Article 5</a></li>
-                        </ul>
+                       
                     </div>
 
                     <div class="col-md-3 col-md-push-1">
@@ -317,10 +274,7 @@
                     <div class="col-md-3">
                         <h4>Contact Information</h4>
                         <ul class="fh5co-footer-links">
-                            <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-                            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                            <li><a href="http://gettemplates.co">gettemplates.co</a></li>
+                           <li> Please see Contact page</li>
                         </ul>
                     </div>
 
@@ -372,3 +326,39 @@
 </body>
 
 </html>
+
+                      <script>
+
+  var counter_list = [10,10000,10000];
+  var str_counter_0 = counter_list[0];
+  var str_counter_1 = counter_list[1];
+  var str_counter_2 = counter_list[2];
+  var display_str = "";
+  var display_div = document.getElementById("display_div_id");
+
+  function incrementCount(current_count){
+    setInterval(function(){
+      // clear count
+      while (display_div.hasChildNodes()) {
+          display_div.removeChild(display_div.lastChild);
+      }
+      str_counter_0++;
+      if (str_counter_0 > 99) {
+        str_counter_0 = 0; // reset count
+        str_counter_1++;    // increase next count
+      }
+      if(str_counter_1>99999){
+        str_counter_2++;
+      }
+      display_str = str_counter_2.toString() + str_counter_1.toString() + str_counter_0.toString();
+      for (var i = 0; i < display_str.length; i++) {
+        var new_span = document.createElement('span');
+        new_span.className = 'num_tiles';
+        new_span.innerText = display_str[i];
+        display_div.appendChild(new_span);
+      }
+    },1000);
+  }
+
+
+</script>
