@@ -1,0 +1,36 @@
+# A .YAML file is used to export DNS records to a
+# domain managed by Google Cloud. The format is
+# exclusive to Google Cloud DNS.
+
+---
+kind: dns#resourceRecordSet
+name: 'pr20cc.com.'
+rrdatas:
+- '1 aspmx.l.google.com.'
+- '5 alt1.aspmx.l.google.com.'
+- '5 alt2.aspmx.l.google.com.'
+- '10 alt3.aspmx.l.google.com.'
+- '10 alt4.aspmx.l.google.com.'
+ttl: 3600
+type: MX
+---
+kind: dns#resourceRecordSet
+name: 'pr20cc.com.'
+rrdatas:
+- '"v=spf1 include:_spf.google.com ~all"'
+ttl: 3600
+type: SPF
+---
+kind: dns#resourceRecordSet
+name: 'pr20cc.com.'
+rrdatas:
+- '"v=spf1 include:_spf.google.com ~all"'
+ttl: 3600
+type: TXT
+---
+kind: dns#resourceRecordSet
+name: 'google._domainkey.pr20cc.com.'
+rrdatas:
+- '"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArWbh7G2N0o7DvfiNryi80YwPsssRQmeZ6V19WZLnnYuCiOPXBHMDtN0em0Z136f23sbonTb/VppElWGVbRsHTnRRrLlpyW2h3tP7eicvSB+EG4vTEVGg+K2GJ28vSLI80iTevAOcx4MZxtoim1DfCqjA4NF80JrGZJeZG/C7UCApkr+40coPGI+4LPdEQp5GM" "RpVmKDrCOXcT5Gk63baCwgJBaQYu1MFb9Du4UNV45fU3vZ1RXb/dew88YU1XcgMMcaLfbnqI+oXwBNLF0YXhpFQjKZ9PKVs17lkkmDMXsUzDpHnst931cKhX9GPOC2a973QlGrUfsTb95U9Sc3HyQIDAQAB"'
+ttl: 3600
+type: TXT
